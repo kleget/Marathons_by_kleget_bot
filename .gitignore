@@ -1,1 +1,7 @@
-.idea
+.*
+.idea/
+data_base.db
+data_base.db-journal
+.venv
+token.py
+__pycache__

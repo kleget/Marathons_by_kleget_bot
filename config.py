@@ -1,29 +1,25 @@
-import random
-import sqlite3 as sq
-from config import *
+import asyncio
 import logging
-# from data_words import base
-import aiogram.utils.markdown as md
-from aiogram import Bot, Dispatcher, types
-from aiogram.types import ParseMode, InlineKeyboardMarkup
-from aiogram.utils import executor
-from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters.state import State, StatesGroup
-from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
-######## OTHER IMPORTS ########
-# import sqlite3 as sq
-# import re
-# from datetime import datetime
+# from token import *
+from db_manage import *
 
+from contextlib import suppress
+from datetime import datetime, timedelta
 
-# import datetime as dt
+from aiogram import Bot, Dispatcher, types, F, Router
+from aiogram.filters import Command, CommandObject
+from aiogram.client.default import DefaultBotProperties
+from aiogram.exceptions import TelegramBadRequest
+from aiogram.enums.parse_mode import ParseMode
+from aiogram.enums.chat_member_status import ChatMemberStatus
 
-######## CONST ########
-TOKEN = '7437203058:AAEFjSvdH4aqPhVVo_96I4t70X0cqoUVpSk'
-# YOOTOKEN = "*****************" #test
-# YOOTOKEN = "**************" #live
-# v = 5.131
-logging.basicConfig(level=logging.INFO)
-bot = Bot(token=TOKEN)
-dp = Dispatcher(bot, storage=MemoryStorage())
+# TOKEN = os.getenv("7437203058:AAEFjSvdH4aqPhVVo_96I4t70X0cqoUVpSk")
+TOKEN = "7437203058:AAEFjSvdH4aqPhVVo_96I4t70X0cqoUVpSk"
+# logging.basicConfig(level=logging.INFO)
+#
+# bot = Bot(TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+# dp = Dispatcher()
+#
+# router = Router()
+# router.message.filter(F.chat.type != "private")
