@@ -1,5 +1,6 @@
 .*
 .idea/
+.idea/workspace.xml
 data_base.db
 data_base.db-journal
 .venv
