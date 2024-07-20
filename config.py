@@ -16,6 +16,7 @@ from aiogram.enums.chat_member_status import ChatMemberStatus
 
 # TOKEN = os.getenv("7437203058:AAEFjSvdH4aqPhVVo_96I4t70X0cqoUVpSk")
 TOKEN = "7437203058:AAEFjSvdH4aqPhVVo_96I4t70X0cqoUVpSk"
+ADMIN = 1277447609
 # logging.basicConfig(level=logging.INFO)
 #
 # bot = Bot(TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))

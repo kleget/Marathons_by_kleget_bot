@@ -6,11 +6,11 @@ async def db_update(pole, id, text):
         sql.execute(f"UPDATE users SET {str(pole)} = (?) WHERE user_id == '{str(id)}'", (str(text),))
         con.commit()
 
-# async def db_select(pole, id):
-#     with sq.connect(f'db_main.db') as con:
-#         sql = con.cursor()
-#         sql.execute(f"SELECT {str(pole)} FROM users WHERE chat_id == '{str(id)}'")
-#         return sql.fetchone()
+async def db_select(pole, id):
+    with sq.connect(f'data_base.db') as con:
+        sql = con.cursor()
+        sql.execute(f"SELECT {str(pole)} FROM users WHERE chat_id == '{str(id)}'")
+        return sql.fetchone()
 #
 # async def db_select_2(system, id):
 #     with sq.connect(f'db_main.db') as con:
@@ -23,11 +23,11 @@ async def db_update(pole, id, text):
 #         sql = con.cursor()
 #         sql.execute(f"SELECT state FROM users WHERE chat_id == '{str(id)}' AND systemes == '{system}'")
 #         return sql.fetchall()
-# async def db_select_all(sys, id):
-#     with sq.connect(f'db_main.db') as con:
-#         sql = con.cursor()
-#         sql.execute(f"SELECT {sys} FROM users WHERE chat_id == '{str(id)}'")
-#         return sql.fetchall()
+async def db_select_all():
+    with sq.connect(f'data_base.db') as con:
+        sql = con.cursor()
+        sql.execute(f"SELECT * FROM users")
+        return sql.fetchall()
 # #
 # async def db_select_with_sys(pole, id, sys):
 #     with sq.connect(f'db_main.db') as con:
