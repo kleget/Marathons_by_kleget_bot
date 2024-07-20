@@ -18,8 +18,8 @@ from aiogram.enums.chat_member_status import ChatMemberStatus
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apsched import *
 from aiogram.methods.set_message_reaction import SetMessageReaction
-TOKEN = "7437203058:AAHmCnMuE1RHM06rVydmesWeHPgmv3tNJS0"
-ADMIN = 1277447609
+TOKEN = "************************"
+ADMIN = *********
 global clear_database
 clear_database = False
 logging.basicConfig(level=logging.INFO)
